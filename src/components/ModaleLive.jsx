@@ -30,7 +30,7 @@ const ModaleLive = (props) => {
                         </Card.Title>
 
                         <Card.Title style={{ borderBottom: '1px solid white' }}>
-                            Percepitazioni <br />
+                            Percepita <br />
                             {detTempC(props.weather.main.feels_like).toFixed(2)} °C
                         </Card.Title>
 
