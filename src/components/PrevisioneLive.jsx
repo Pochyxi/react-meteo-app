@@ -18,7 +18,7 @@ class PrevisioneLive extends Component {
     fetchWeather = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},it&APPID=c257347b25e5e8b03eb83e2d6b5ae1d1&lang=IT`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city},it&APPID=c257347b25e5e8b03eb83e2d6b5ae1d1&lang=IT`);
             if (response.ok) {
 
                 const data = await response.json();
@@ -50,6 +50,7 @@ class PrevisioneLive extends Component {
                                 <form onSubmit={this.fetchWeather}>
                                     <Form.Group>
                                         <Form.Control
+                                            required
                                             className='text-center'
                                             value={this.state.city}
                                             onChange={(e) => this.setState({ city: e.target.value })}
@@ -58,7 +59,7 @@ class PrevisioneLive extends Component {
                                     </Form.Group>
                                     <Button
                                         type='submit'
-                                        className='btn-dark'>Take weather</Button>
+                                        className='btn-dark'>Vai</Button>
                                 </form>
                             </Col>
                         </Row>

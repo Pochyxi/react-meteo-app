@@ -4,7 +4,7 @@ import { FaRegArrowAltCircleLeft } from 'react-icons/fa'
 export const detTempC = (kelvin) => kelvin - 273
 
 const ModaleLive = (props) => {
-
+    console.log(props.weather.name)
     console.log(props.weather.weather[0].icon)
     return (
 
@@ -23,14 +23,14 @@ const ModaleLive = (props) => {
                         <Card.Img className="img-fluid mx-auto" variant="top" src={`https://openweathermap.org/img/wn/${props.weather.weather[0].icon}@4x.png`} />
                         <h4>{props.weather.weather[0].description}</h4>
                     </div>
-                    <Card.Body className="text-start d-flex flex-wrap align-items-center justify-content-between justify-content-md-evenly">
+                    <Card.Body className="text-center text-md-start d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-between justify-content-md-evenly">
                         <Card.Title style={{ borderBottom: '1px solid white' }}>
                             Temperatura <br />
                             {detTempC(props.weather.main.temp).toFixed(2)} °C
                         </Card.Title>
 
                         <Card.Title style={{ borderBottom: '1px solid white' }}>
-                            Percepita <br />
+                            Percepitazioni <br />
                             {detTempC(props.weather.main.feels_like).toFixed(2)} °C
                         </Card.Title>
 
@@ -48,11 +48,9 @@ const ModaleLive = (props) => {
                             Umidità <br />
                             {props.weather.main.humidity}%
                         </Card.Title>
-
-
                     </Card.Body>
                     <div>
-                        <Button onClick={() => props.setStateOut('takeMore', true)} className="h-100 w-100 btn-dark">take more</Button>
+                        <Button onClick={() => props.setStateOut('takeMore', true)} className="h-100 w-100 btn-dark">Altro</Button>
                     </div>
                 </Card>
             </Col>

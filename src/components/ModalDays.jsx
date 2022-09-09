@@ -24,7 +24,7 @@ const ModalDays = (props) => {
     }
     const fetchDays = async () => {
         try {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${props.city},it&APPID=c257347b25e5e8b03eb83e2d6b5ae1d1&lang=IT`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${props.city},it&APPID=c257347b25e5e8b03eb83e2d6b5ae1d1&lang=IT`);
             if (response.ok) {
 
                 const data = await response.json();
