@@ -1,4 +1,4 @@
-import { Col, Row, Card, Button } from "react-bootstrap"
+import { Col, Row, Card, Button, ToggleButton } from "react-bootstrap"
 import { FaRegArrowAltCircleLeft } from 'react-icons/fa'
 
 export const detTempC = (kelvin) => kelvin - 273
@@ -50,7 +50,7 @@ const ModaleLive = (props) => {
                         </Card.Title>
                     </Card.Body>
                     <div>
-                        <Button onClick={() => props.setStateOut('takeMore', true)} className="h-100 w-100 btn-dark">Altro</Button>
+                        <Button size="lg" onClick={() => props.setStateOut('takeMore', true)} className="h-100 w-100 btn-dark">Altro</Button>
                     </div>
                 </Card>
             </Col>
