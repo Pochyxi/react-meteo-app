@@ -64,8 +64,6 @@ export const mixerDays = (array) => {
     obj[value] = key;
   };
 
-  console.log(array.length);
-
   for (let i = 0; i < array.length - 1; i++) {
     if (
       takeOnlyDate(array[i].dt_txt).getDate() !==

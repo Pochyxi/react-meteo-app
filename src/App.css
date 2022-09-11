@@ -11,6 +11,9 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s ease-in-out;
+    -webkit-animation: App-logo-spin 20s  ease-in-out;
+    -moz-animation:    App-logo-spin 20s  ease-in-out;
+    -o-animation:      App-logo-spin 20s  ease-in-out;
   }
 }
 

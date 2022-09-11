@@ -99,10 +99,6 @@ const ModalDays = (props) => {
             console.log(e);
         }
     }
-    console.log('dayChose: ' + dayChose)
-    console.log('days:________________________________ ')
-    console.log(days)
-    console.log('days.arrOfInfo.length === ' + days?.arrOfInfo.length)
 
     return (
         <Row>
