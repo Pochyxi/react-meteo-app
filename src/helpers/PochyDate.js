@@ -33,6 +33,8 @@ export const takeOnlyDate = (string) => {
 };
 
 export const mixerDays = (array) => {
+  console.log("ricevo array");
+  console.log(array);
   let counter = 0;
 
   let obj = {
@@ -63,21 +65,23 @@ export const mixerDays = (array) => {
   const setObj = (value, key) => {
     obj[value] = key;
   };
-
+  console.log("eseguo ciclo di controllo array");
   for (let i = 0; i < array.length - 1; i++) {
     if (
       takeOnlyDate(array[i].dt_txt).getDate() !==
       takeOnlyDate(array[i + 1].dt_txt).getDate()
     ) {
+      console.log("trovata sezione array da tagliare all'indice: " + i);
       obj.arrOfInfo.push("a" + i);
 
       setObj("a" + i, array.slice(counter, i + 1));
-      console.log(obj);
 
       counter = i + 1;
     }
   }
   setObj("aLast", array.slice(counter, array.length));
-
+  console.log("-----------------elaboro oggetto finale in : ");
+  console.log(obj);
+  console.log("-----------------");
   return obj;
 };
