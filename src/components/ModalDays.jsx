@@ -149,7 +149,6 @@ const ModalDays = (props) => {
                     <h2>Observing the future...</h2>
                 </Col>)
             }
-
         </Row >
     )
 }

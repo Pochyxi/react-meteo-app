@@ -5,8 +5,7 @@ import { BsFillCalendarDayFill } from 'react-icons/bs'
 export const detTempC = (kelvin) => kelvin - 273
 
 const ModaleLive = (props) => {
-    console.log(props.weather.name)
-    console.log(props.weather.weather[0].icon)
+
     return (
 
         <Row>

@@ -11,9 +11,6 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s ease-in-out;
-    -webkit-animation: App-logo-spin 20s  ease-in-out;
-    -moz-animation:    App-logo-spin 20s  ease-in-out;
-    -o-animation:      App-logo-spin 20s  ease-in-out;
   }
 }
 
@@ -110,10 +107,6 @@
 .b-faReact {
   font-size: 5em;
   color: yellow;
-  -webkit-animation: faRotate 1s infinite ease-in-out;
-    -moz-animation:    faRotate 1s infinite ease-in-out;
-    -o-animation:      faRotate 1s infinite ease-in-out;
-    animation:         faRotate 1s infinite ease-in-out;
   animation: faRotate infinite 1s ease-in-out;
 }
 

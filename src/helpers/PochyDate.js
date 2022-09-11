@@ -71,9 +71,9 @@ export const mixerDays = (array) => {
     ) {
       obj.arrOfInfo.push("a" + i);
 
-      for (let a = 0; a < i; a++) {
-        setObj("a" + i, array.slice(counter, i + 1));
-      }
+      setObj("a" + i, array.slice(counter, i + 1));
+      console.log(obj);
+
       counter = i + 1;
     }
   }
