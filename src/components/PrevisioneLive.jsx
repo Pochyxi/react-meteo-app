@@ -3,6 +3,7 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import withRouter from '../helpers/withRouter';
 import ModalDays from './ModalDays';
 import ModaleLive from './ModaleLive';
+import { RiReactjsLine } from 'react-icons/ri'
 
 
 class PrevisioneLive extends Component {
@@ -11,6 +12,7 @@ class PrevisioneLive extends Component {
         weather: null,
         toggle: true,
         takeMore: false,
+        wrongCity: false,
     }
     setStateOut = (keyProp, valueProp) => {
         this.setState({ [keyProp]: valueProp })
@@ -24,13 +26,19 @@ class PrevisioneLive extends Component {
                 const data = await response.json();
 
                 this.setState({
-                    weather: data,
+
                     toggle: false,
                 })
+                setTimeout(() => {
+                    this.setState({
+                        weather: data,
+                    })
+                }, 2000);
                 console.log(data);
 
             } else {
                 console.log('somewhere is not a valid weather')
+                this.setState({ wrongCity: true });
             }
 
         } catch (e) {
@@ -43,17 +51,25 @@ class PrevisioneLive extends Component {
             <Container>
                 {
                     this.state.toggle ? (
-
                         <Row >
                             <Col>
                                 <h1>PREVISIONI LIVE</h1>
+                                {
+                                    this.state.wrongCity && (
+                                        <div><RiReactjsLine className='text-danger' /> <span>{this.state.city}</span> non è un nome di città italiana valido! <RiReactjsLine className='text-danger' /></div>
+                                    )
+                                }
                                 <form onSubmit={this.fetchWeather}>
                                     <Form.Group>
                                         <Form.Control
                                             required
                                             className='text-center'
                                             value={this.state.city}
-                                            onChange={(e) => this.setState({ city: e.target.value })}
+                                            onChange={(e) => {
+                                                this.setState({ wrongCity: false })
+                                                this.setState({ city: e.target.value })
+                                            }
+                                            }
                                             type='text'
                                             placeholder='Inserisci la città' />
                                     </Form.Group>

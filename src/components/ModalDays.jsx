@@ -88,9 +88,9 @@ const ModalDays = (props) => {
             if (response.ok) {
 
                 const data = await response.json();
-
-                setDays(mixerDays(data.list));
-
+                setTimeout(() => {
+                    setDays(mixerDays(data.list));
+                }, 2000)
             } else {
                 console.log('somewhere is not a valid weather')
             }
@@ -145,7 +145,7 @@ const ModalDays = (props) => {
                     </Col>
                 ) : (<Col className="mt-5 pt-5">
                     <FaReact className="b-faReact" />
-                    <h2>Observing the future...</h2>
+                    <h2>Consultando il futuro...</h2>
                 </Col>)
             }
         </Row >
