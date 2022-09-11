@@ -99,7 +99,6 @@ const ModalDays = (props) => {
             console.log(e);
         }
     }
-    console.log(days)
     return (
         <Row>
             {
