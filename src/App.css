@@ -72,3 +72,51 @@
   align-items: center;
   flex-direction: column;
 }
+.b-noButton {
+  border:none;
+  background-color: transparent;
+  font-size: 2rem;
+}
+.b-noButton:hover {
+  background-color: transparent!important;
+  color: orangered!important;
+}
+.b-noButton:active {
+  background-color: transparent;
+  color: yellow!important;
+  animation: zoom 1s  ease-out;
+}
+@keyframes zoom {
+  from {
+    transform: rotate(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+.noclick {
+  color: gray!important;
+}
+.noclick:hover {
+  color:gray!important;
+}
+.b-card-title-margin {
+  margin: 1em;
+}
+.b-faReact {
+  font-size: 5em;
+  color: yellow;
+  animation: faRotate infinite 1s ease-in-out;
+}
+
+@keyframes faRotate {
+  from {
+    transform: rotate(0deg);
+    color: yellow;
+  }
+  to {
+    transform: rotate(360deg);
+    color: orangered;
+  }
+}
