@@ -39,9 +39,11 @@ export const mixerDays = (array) => {
 
   let obj = {
     arrOfInfo: [],
+
     functionToGet: function (object, key) {
       return object[key];
     },
+
     getDay1: function () {
       return this.functionToGet(obj, this.arrOfInfo[0]);
     },
@@ -65,6 +67,7 @@ export const mixerDays = (array) => {
   const setObj = (value, key) => {
     obj[value] = key;
   };
+
   console.log("eseguo ciclo di controllo array");
   for (let i = 0; i < array.length - 1; i++) {
     if (
@@ -79,6 +82,7 @@ export const mixerDays = (array) => {
       counter = i + 1;
     }
   }
+
   setObj("aLast", array.slice(counter, array.length));
   console.log("-----------------elaboro oggetto finale in : ");
   console.log(obj);
