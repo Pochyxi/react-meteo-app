@@ -7,6 +7,24 @@
   pointer-events: none;
   position: relative;
 }
+#growApp {
+  height: 80vmin;
+  animation: zoomout 3s infinite ease-in;
+  
+}
+#growSun {
+  animation: zoomout 3s infinite ease-in;
+}
+@keyframes zoomout {
+  from {
+    transform: scale(3);
+    color: black;
+  }
+  to {
+    transform: scale(1);
+    color: white;
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

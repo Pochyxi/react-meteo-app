@@ -13,9 +13,15 @@ class PrevisioneLive extends Component {
         toggle: true,
         takeMore: false,
         wrongCity: false,
+        formToggle: false,
     }
     setStateOut = (keyProp, valueProp) => {
         this.setState({ [keyProp]: valueProp })
+    }
+    componentDidMount = () => {
+        setTimeout(() => {
+            this.setState({ formToggle: true })
+        }, 3500)
     }
     fetchWeather = async (e) => {
         e.preventDefault();
@@ -53,30 +59,38 @@ class PrevisioneLive extends Component {
                     this.state.toggle ? (
                         <Row >
                             <Col>
-                                <h1>PREVISIONI LIVE</h1>
                                 {
-                                    this.state.wrongCity && (
-                                        <div><RiReactjsLine className='text-danger' /> <span>{this.state.city}</span> non è un nome di città italiana valido! <RiReactjsLine className='text-danger' /></div>
+                                    this.state.formToggle && (
+                                        <>
+                                            <h1>PREVISIONI LIVE</h1>
+                                            {
+                                                this.state.wrongCity && (
+                                                    <div><RiReactjsLine className='text-danger' /> <span>{this.state.city}</span> non è un nome di città italiana valido! <RiReactjsLine className='text-danger' /></div>
+                                                )
+                                            }
+                                            <form onSubmit={this.fetchWeather}>
+                                                <Form.Group>
+                                                    <Form.Control
+                                                        required
+                                                        className='text-center'
+                                                        value={this.state.city}
+                                                        onChange={(e) => {
+                                                            this.setState({ wrongCity: false })
+                                                            this.setState({ city: e.target.value })
+                                                        }
+                                                        }
+                                                        type='text'
+                                                        placeholder='Inserisci la città' />
+                                                </Form.Group>
+                                                <Button
+                                                    type='submit'
+                                                    className='btn-dark'>Vai</Button>
+                                            </form>
+                                        </>
+
                                     )
                                 }
-                                <form onSubmit={this.fetchWeather}>
-                                    <Form.Group>
-                                        <Form.Control
-                                            required
-                                            className='text-center'
-                                            value={this.state.city}
-                                            onChange={(e) => {
-                                                this.setState({ wrongCity: false })
-                                                this.setState({ city: e.target.value })
-                                            }
-                                            }
-                                            type='text'
-                                            placeholder='Inserisci la città' />
-                                    </Form.Group>
-                                    <Button
-                                        type='submit'
-                                        className='btn-dark'>Vai</Button>
-                                </form>
+
                             </Col>
                         </Row>
                     ) : !this.state.takeMore ? (
