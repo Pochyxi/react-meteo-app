@@ -20,7 +20,10 @@ function App() {
           path="/"
           element={
             <div className="App">
-              <header className="App-header">
+              <header
+                id={transformToggle ? "overhide" : ""}
+                className="App-header"
+              >
                 <div className="p-div-imgs">
                   <img
                     src={logo}
